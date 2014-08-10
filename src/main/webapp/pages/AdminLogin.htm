@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>管理员登录</title>
+<link href="resources/css/common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.form.js"></script>
+<script type="text/javascript" src="resources/js/adminLogin.js"></script>
+</head>
+
+<body>
+<div style="width:533px;height:248px;position:absolute;left:50%;top:40%;margin-left:-267px;margin-top:-128px;background:url(../images/loginbg.gif);">
+	<div style="width:480px;height:100%;margin-left:60px;margin-top:60px;">
+		<div style="width:155px;height:100%;text-align:center;float:left;">
+			<img src="resources/images/2.png" width="103" height="114">
+		</div>
+		<div id="notice" class="noticediv" style="width:325px;float:left;">
+		</div>
+		<div style="width:325px;height:100%;float:left;">
+			<form action="" method="post" id="adminLoginForm">
+				<table border="0" cellpadding="1" cellspacing="1">
+					<tbody>
+						<tr>
+							<td align="center" width="80">管理员帐号</td>
+							<td>
+								<input type="text" id="accountId" name="accountId" size="18" class="input" style="width:130px">
+							</td>
+						</tr>
+						<tr>
+							<td align="center" width="80">管理员密码</td>
+							<td>
+								<input type="password" id="password" name="password" size="18" class="input" style="width:130px">
+							</td>
+						</tr>
+						<tr>
+							<td  align="center" width="80">图形验证码</td>
+							<td>
+								<table border="0" cellspacing="0" cellpadding="0" height="20">
+									<tbody>
+										<tr>
+											<td>
+												<input type="text" id="ImgCode" name="ImgCode" style="width:65px" class="input">
+											</td>
+											<td style="padding:0px 3px">
+												<img id="codeimg" src="./AdminLogin_files/codeimg.php" width="60" height="18" style="border:1px #dddddd solid;cursor:pointer">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td width="80" align="center"></td>
+							<td height="40">
+								<input type="submit" name="Submit" value="管理员登录" class="button">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
