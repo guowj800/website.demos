@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>管理员登录</title>
+<link href="resources/css/common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.form.js"></script>
+<script type="text/javascript" src="resources/js/adminLogin.js"></script>
+</head>
+
+<script type="text/javascript">
+function ajax_get(URL) {
+	$.ajax({
+		url : URL,
+		type : "GET",
+		dataType : "json",
+		success : function(data, textStatus, XMLHttpRequest) {
+			document.getElementById("textarea").innerHTML = "";
+        	$.each(data, function(i, item){
+        		
+        		document.getElementById("textarea").innerHTML = document.getElementById("textarea").innerHTML
+        		+ item["creator-name"] + "(" + new Date(item["created-at"] * 1000) + "): " + item.action + "\n";
+        	});
+		},
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			alert("Get restful does not work:" + 
+					"\nXMLHttpRequest.readyState:" + XMLHttpRequest.readyStatec+ 
+					"\nXMLHttpRequest.responseText:" + XMLHttpRequest.responseText + 
+					"\ntextStatus:"	+ textStatus + 
+					"\nerrorThrown:" + errorThrown);
+		}
+	});
+};
+
+function ajax_post(URL, content) {
+	$.ajax({
+		url : URL,
+		type : "POST",
+		data: content,
+		success : function(data, textStatus, XMLHttpRequest) {
+			alert(data);
+		},
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			alert("POST restful does not work:" + 
+					"\nXMLHttpRequest.readyState:" + XMLHttpRequest.readyStatec+ 
+					"\nXMLHttpRequest.responseText:" + XMLHttpRequest.responseText + 
+					"\ntextStatus:"	+ textStatus + 
+					"\nerrorThrown:" + errorThrown);
+		}
+	});
+};
+
+</script>
+<body>
+<textarea id="textarea" rows="20" cols="100"></textarea>
+</body>
+</html>
