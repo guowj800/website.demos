@@ -11,8 +11,8 @@ import website.demos.persistence.entities.Account;
 @Repository
 public class AccountRepository extends GeneralRepository<Account> {
 
-	public Account getAccountByLoginId(final String accountId) {
-		String queryString = "from Account account where account.accountId = '" + accountId + "'";
+	public Account getAccountByLoginId(final String loginId) {
+		String queryString = "from Account account where account.loginId = '" + loginId + "'";
 		return this.query(queryString).get(0);
 	}
 	

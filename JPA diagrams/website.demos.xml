@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
 	<entity>
+		<entity-name>website.demos.persistence.entities.NavigationSecond</entity-name>
+		<entity-width>151</entity-width>
+		<entity-height>32</entity-height>
+		<entity-X-Coordinate>680</entity-X-Coordinate>
+		<entity-Y-Coordinate>238</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
 		<entity-name>website.demos.persistence.entities.Account</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>188</entity-height>
@@ -16,17 +27,6 @@
 		<entity-height>168</entity-height>
 		<entity-X-Coordinate>510</entity-X-Coordinate>
 		<entity-Y-Coordinate>30</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>website.demos.persistence.entities.NavigationSecond</entity-name>
-		<entity-width>151</entity-width>
-		<entity-height>32</entity-height>
-		<entity-X-Coordinate>680</entity-X-Coordinate>
-		<entity-Y-Coordinate>238</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

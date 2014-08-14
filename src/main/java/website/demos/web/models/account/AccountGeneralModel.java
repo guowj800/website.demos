@@ -25,7 +25,7 @@ public class AccountGeneralModel extends Account {
 
 	@Override
 	@JsonIgnore
-	public String getAccountId() {
-		return super.getAccountId();
+	public String getLoginId() {
+		return super.getLoginId();
 	}
 }

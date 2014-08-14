@@ -19,5 +19,12 @@ public class PageController{
 		
 		return "AdminLogin";
 	}
+	
+	@RequestMapping("rest")
+	public String pageRest() {
+		logger.info("Page rest.htm");
+		
+		return "rest";
+	}
 
 }

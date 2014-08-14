@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: wenjie
-Build-Jdk: 1.7.0_45
+Built-By: wenjie.guo
+Build-Jdk: 1.7.0_55
 Created-By: Maven Integration for Eclipse
 

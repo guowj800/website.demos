@@ -10,13 +10,16 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import website.demos.common.exceptions.CommonSystemException;
 import website.demos.persistence.entities.Account;
 import website.demos.service.AccountService;
 import website.demos.service.enums.ELoginStatus;
+import website.demos.service.enums.ERegisterStatus;
 import website.demos.web.exceptions.CommonWebException;
+import website.demos.web.models.account.AccountCreationModel;
 import website.demos.web.models.account.AccountGeneralModel;
 
 
@@ -79,7 +82,7 @@ public class AccountController{
 	 * @return
 	 * @throws CommonPortalException
 	 */
-	@RequestMapping("varify-login-info")
+	@RequestMapping(value="varify-login-info", method = RequestMethod.POST)
 	@ResponseBody
 	public String varifyLoginInfo(String loginId, String password, HttpSession session) throws CommonWebException {
 		if (StringUtils.isBlank(loginId)) {
@@ -101,8 +104,8 @@ public class AccountController{
 		default:
 			Account account = accountService.getAccountByLoginId(loginId);
 			if (account != null) {
-				session.setAttribute("LoginId", account.getAccountId());
 				session.setAttribute("AccountId", account.getId());
+				session.setAttribute("LoginId", account.getLoginId());
 			}
 			responseMessage = loginStatus.getDescription();
 			break;
@@ -113,9 +116,19 @@ public class AccountController{
 	/*
 	 * Create
 	 */
+	@RequestMapping(value="registor", method = RequestMethod.POST)
+	@ResponseBody
+	public String registor(AccountCreationModel accountCreationModel , HttpSession session) throws CommonSystemException{
+		ERegisterStatus registorStatus = accountService.register(accountCreationModel.getEntity());
+		return registorStatus.getDescription();
+	}
 
 	/*
 	 * Merge
+	 */
+	
+	/*
+	 * Delete
 	 */
 
 }

@@ -3,6 +3,7 @@ package website.demos.service;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,7 @@ public class AccountService {
 
 	//register (persist new account)
 	public ERegisterStatus register(Account account){
-		if(isLoginIdExisted(account.getAccountId()))
+		if(isLoginIdExisted(account.getLoginId()))
 			return ERegisterStatus.INVALID_LOGIN_ID;
 		if (StringUtils.isBlank(account.getPassword())) {
 			return ERegisterStatus.INVALID_PASSWORD;
@@ -54,7 +55,7 @@ public class AccountService {
 	}
 
 	protected void varifyAccount(Account account) throws CommonServiceException {
-		if (StringUtils.isBlank(account.getAccountId())) {
+		if (StringUtils.isBlank(account.getLoginId())) {
 			throw new CommonServiceException("Account ID must be specified!");
 		}
 		if (StringUtils.isBlank(account.getPassword())) {
@@ -74,5 +75,14 @@ public class AccountService {
 		} else {
 			return ELoginStatus.VALID_LOGIN_INFO;
 		}
+	}
+	
+	//verify if the user is login
+	public boolean isLogin(HttpSession session){
+		Account account = accountRepository.getAccountByLoginId(loginId);
+		if(account != null)
+			return true;
+		else
+			return false;
 	}
 }

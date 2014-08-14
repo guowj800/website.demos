@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
-org.eclipse.jpt.core.platform=eclipselink2_5
+entitygen.DEFAULT_PACKAGE=website.demos.persistence.entities
+org.eclipse.jpt.core.platform=generic2_1
 org.eclipse.jpt.jpa.core.discoverAnnotatedClasses=false

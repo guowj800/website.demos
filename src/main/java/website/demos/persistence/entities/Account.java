@@ -22,8 +22,8 @@ public class Account implements Serializable {
 	private long id;
 	
 	@Basic
-	@Column(name = "AccountId", unique = true, nullable = true)
-	private String accountId;
+	@Column(name = "LoginId", unique = true, nullable = true)
+	private String loginId;
 	
 	@Basic
 	@Column(name = "Password", nullable = true)
@@ -50,12 +50,12 @@ public class Account implements Serializable {
 		this.id = id;
 	}
 
-	public String getAccountId() {
-		return accountId;
+	public String getLoginId() {
+		return loginId;
 	}
 
-	public void setAccountId(String param) {
-		this.accountId = param;
+	public void setLoginId(String param) {
+		this.loginId = param;
 	}
 
 	public String getPassword() {

@@ -24,7 +24,7 @@ public class DataInitialization {
 		System.out.println("Data Init");
 		
 		Account jack = new Account();
-		jack.setAccountId("jack");
+		jack.setLoginId("jack");
 		jack.setPassword("000000");
 		jack.setName("Jack Zhang");
 		

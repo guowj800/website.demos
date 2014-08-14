@@ -4,13 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>管理员登录</title>
-<link href="resources/css/common.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery.form.js"></script>
-<script type="text/javascript" src="resources/js/adminLogin.js"></script>
+<link href="../resources/css/common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.form.js"></script>
+<script type="text/javascript" src="../resources/js/adminLogin.js"></script>
 </head>
 
 <script type="text/javascript">
+
+//geturl = "../account/get-account-by-login-id.do?loginId=jack";
+//ajax_get(geturl);
 function ajax_get(URL) {
 	$.ajax({
 		url : URL,
@@ -18,11 +21,10 @@ function ajax_get(URL) {
 		dataType : "json",
 		success : function(data, textStatus, XMLHttpRequest) {
 			document.getElementById("textarea").innerHTML = "";
-        	$.each(data, function(i, item){
-        		
-        		document.getElementById("textarea").innerHTML = document.getElementById("textarea").innerHTML
-        		+ item["creator-name"] + "(" + new Date(item["created-at"] * 1000) + "): " + item.action + "\n";
-        	});
+			document.getElementById("textarea").innerHTML = data["name"];
+//			$.each(data, function(i, item){
+//				document.getElementById("textarea").innerHTML = document.getElementById("textarea").innerHTML + item + "\n";
+//			});
 		},
 		error : function(XMLHttpRequest, textStatus, errorThrown) {
 			alert("Get restful does not work:" + 
@@ -34,11 +36,16 @@ function ajax_get(URL) {
 	});
 };
 
+posturl = "../account/varify-login-info.do";
+postcontent = {"loginId":"jack", "password":"000000"};
+
+ajax_post(posturl,postcontent);
 function ajax_post(URL, content) {
 	$.ajax({
 		url : URL,
 		type : "POST",
 		data: content,
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		success : function(data, textStatus, XMLHttpRequest) {
 			alert(data);
 		},
