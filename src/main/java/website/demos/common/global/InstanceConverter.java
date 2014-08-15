@@ -1,4 +1,4 @@
-package website.demos.common.golbal;
+package website.demos.common.global;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

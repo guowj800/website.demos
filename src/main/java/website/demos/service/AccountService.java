@@ -9,10 +9,10 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import website.demos.common.global.GlobalConstants;
 import website.demos.persistence.entities.Account;
 import website.demos.persistence.repositories.AccountRepository;
-import website.demos.service.enums.ELoginStatus;
-import website.demos.service.enums.ERegisterStatus;
+import website.demos.service.enums.EAccountService;
 import website.demos.service.exceptions.CommonServiceException;
 
 @Service
@@ -30,10 +30,7 @@ public class AccountService {
 		return accountRepository.getAllAccounts();
 	}
 	
-	public void update(Account account){
-		accountRepository.update(account);
-	}
-	
+	//verify if the loginId is exist
 	public boolean isLoginIdExisted(String loginId){
 		Account account = accountRepository.getAccountByLoginId(loginId);
 		if(account != null)
@@ -41,16 +38,30 @@ public class AccountService {
 		else
 			return false;
 	}
+	
+	//login
+	public EAccountService varifyLoginInfo(String loginId, String password) {
+		Account account = accountRepository.getAccountByLoginId(loginId);
+		if (account == null) {
+			return EAccountService.INVALID_LOGIN_ID;
+		}
+
+		if (!account.getPassword().equals(password)) {
+			return EAccountService.INVALID_PASSWORD;
+		} else {
+			return EAccountService.VALID_LOGIN_INFO;
+		}
+	}
 
 	//register (persist new account)
-	public ERegisterStatus register(Account account){
+	public EAccountService register(Account account){
 		if(isLoginIdExisted(account.getLoginId()))
-			return ERegisterStatus.INVALID_LOGIN_ID;
+			return EAccountService.LOGIN_ID_EXIST;
 		if (StringUtils.isBlank(account.getPassword())) {
-			return ERegisterStatus.INVALID_PASSWORD;
+			return EAccountService.PASSWORD_IS_NULL;
 		} else {
 			accountRepository.save(account);
-			return ERegisterStatus.VALID_REGISTER_INFO;
+			return EAccountService.VALID_REGISTER_INFO;
 		}
 	}
 
@@ -63,26 +74,30 @@ public class AccountService {
 		}
 	}
 
-	//login
-	public ELoginStatus varifyLoginInfo(String loginId, String password) {
-		Account account = accountRepository.getAccountByLoginId(loginId);
-		if (account == null) {
-			return ELoginStatus.INVALID_LOGIN_ID;
-		}
 
-		if (!account.getPassword().equals(password)) {
-			return ELoginStatus.INVALID_PASSWORD;
-		} else {
-			return ELoginStatus.VALID_LOGIN_INFO;
-		}
-	}
 	
 	//verify if the user is login
 	public boolean isLogin(HttpSession session){
-		Account account = accountRepository.getAccountByLoginId(loginId);
-		if(account != null)
+		if(session.getAttribute(GlobalConstants.SESSION_ACCOUNT_ID) != null)
 			return true;
 		else
 			return false;
+	}
+	
+	//verify login status
+	public EAccountService verifyAccountStatus(HttpSession session){
+		if(isLogin(session))
+			return EAccountService.IS_LOGIN;
+		else
+			return EAccountService.NOT_LOGIN;
+	}
+	
+	public EAccountService updateAccount(Account account, HttpSession session){
+		if(verifyAccountStatus(session) == EAccountService.IS_LOGIN){
+			accountRepository.update(account);
+			return EAccountService.UPDATE_SUCCESS;
+		}
+		else
+			return EAccountService.NOT_LOGIN;
 	}
 }

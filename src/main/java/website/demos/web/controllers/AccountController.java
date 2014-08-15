@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import website.demos.common.exceptions.CommonSystemException;
+import website.demos.common.global.GlobalConstants;
 import website.demos.persistence.entities.Account;
 import website.demos.service.AccountService;
-import website.demos.service.enums.ELoginStatus;
-import website.demos.service.enums.ERegisterStatus;
+import website.demos.service.enums.EAccountService;
 import website.demos.web.exceptions.CommonWebException;
 import website.demos.web.models.account.AccountCreationModel;
 import website.demos.web.models.account.AccountGeneralModel;
@@ -91,7 +91,7 @@ public class AccountController{
 			throw new CommonWebException("Password can't be blank!");
 		}
 		String responseMessage = "";
-		ELoginStatus loginStatus = accountService.varifyLoginInfo(loginId, password);
+		EAccountService loginStatus = accountService.varifyLoginInfo(loginId, password);
 		switch (loginStatus) {
 		case INVALID_LOGIN_ID: {
 			responseMessage = loginStatus.getDescription();
@@ -104,8 +104,8 @@ public class AccountController{
 		default:
 			Account account = accountService.getAccountByLoginId(loginId);
 			if (account != null) {
-				session.setAttribute("AccountId", account.getId());
-				session.setAttribute("LoginId", account.getLoginId());
+				session.setAttribute(GlobalConstants.SESSION_ACCOUNT_ID, account.getId());
+				session.setAttribute(GlobalConstants.SESSION_LOGIN_ID, account.getLoginId());
 			}
 			responseMessage = loginStatus.getDescription();
 			break;
@@ -118,17 +118,20 @@ public class AccountController{
 	 */
 	@RequestMapping(value="registor", method = RequestMethod.POST)
 	@ResponseBody
-	public String registor(AccountCreationModel accountCreationModel , HttpSession session) throws CommonSystemException{
-		ERegisterStatus registorStatus = accountService.register(accountCreationModel.getEntity());
+	public String registor(AccountCreationModel accountCreationModel) throws CommonSystemException{
+		EAccountService registorStatus = accountService.register(accountCreationModel.getEntity());
 		return registorStatus.getDescription();
 	}
 
 	/*
-	 * Merge
+	 * Update
 	 */
-	
-	/*
-	 * Delete
-	 */
+	@RequestMapping(value="update-account", method = RequestMethod.POST)
+	@ResponseBody
+	public String updateAccount(AccountCreationModel accountCreationModel , HttpSession session) throws CommonSystemException{
+		
+		EAccountService registorStatus = accountService.updateAccount(accountCreationModel.getEntity(), session);
+		return registorStatus.getDescription();
+	}
 
 }
