@@ -13,7 +13,11 @@ public class AccountRepository extends GeneralRepository<Account> {
 
 	public Account getAccountByLoginId(final String loginId) {
 		String queryString = "from Account account where account.loginId = '" + loginId + "'";
-		return this.query(queryString).get(0);
+		List<Account> result = this.query(queryString);
+		if(result.isEmpty())
+			return null;
+		else
+			return result.get(0);
 	}
 	
 	public List<Account> getAllAccounts() {

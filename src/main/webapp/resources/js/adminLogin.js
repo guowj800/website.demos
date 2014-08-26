@@ -28,8 +28,8 @@ $(document).ready(function() {
 		beforeSubmit:  validate,  // pre-submit callback 
 		success:       showResponse,  // post-submit callback 
  
-		url: 'post.php'
-        //type:      type        // 'get' or 'post', override for form's 'method' attribute 
+		url: 'account/varify-login-info.do',
+        type:      "POST"        // 'get' or 'post', override for form's 'method' attribute 
         //dataType:  null        // 'xml', 'script', or 'json' (expected server response type) 
         //clearForm: true        // clear all form fields after successful submit 
         //resetForm: true        // reset the form after successful submit 
@@ -81,6 +81,8 @@ function showResponse(responseText, statusText)  {
  
     alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
         '\n\nThe output div should have already been updated with the responseText.'); 
+    if(statusText == "Success")
+    	top.location='account/get-all-accounts.do';
 } 
 
 function validate(formData, jqForm, options) { 
