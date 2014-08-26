@@ -81,7 +81,7 @@ function showResponse(responseText, statusText)  {
  
     alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
         '\n\nThe output div should have already been updated with the responseText.'); 
-    if(statusText == "Success")
+    if(responseText == "Success")
     	top.location='account/get-all-accounts.do';
 } 
 
