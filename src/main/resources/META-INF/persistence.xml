@@ -5,5 +5,7 @@
 		<class>website.demos.persistence.entities.Navigation</class>
 		<class>website.demos.persistence.entities.NavigationFirst</class>
 		<class>website.demos.persistence.entities.NavigationSecond</class>
+		<class>website.demos.persistence.entities.NewsCategory</class>
+		<class>website.demos.persistence.entities.News</class>
 	</persistence-unit>
 </persistence>

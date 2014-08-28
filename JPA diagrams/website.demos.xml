@@ -3,8 +3,19 @@
 		<entity-name>website.demos.persistence.entities.NavigationSecond</entity-name>
 		<entity-width>151</entity-width>
 		<entity-height>32</entity-height>
-		<entity-X-Coordinate>680</entity-X-Coordinate>
-		<entity-Y-Coordinate>238</entity-Y-Coordinate>
+		<entity-X-Coordinate>530</entity-X-Coordinate>
+		<entity-Y-Coordinate>668</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>website.demos.persistence.entities.NewsCategory</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>712</entity-X-Coordinate>
+		<entity-Y-Coordinate>120</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -13,7 +24,7 @@
 	<entity>
 		<entity-name>website.demos.persistence.entities.Account</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>188</entity-height>
+		<entity-height>226</entity-height>
 		<entity-X-Coordinate>90</entity-X-Coordinate>
 		<entity-Y-Coordinate>80</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -25,8 +36,8 @@
 		<entity-name>website.demos.persistence.entities.Navigation</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>168</entity-height>
-		<entity-X-Coordinate>510</entity-X-Coordinate>
-		<entity-Y-Coordinate>30</entity-Y-Coordinate>
+		<entity-X-Coordinate>360</entity-X-Coordinate>
+		<entity-Y-Coordinate>460</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -36,8 +47,19 @@
 		<entity-name>website.demos.persistence.entities.NavigationFirst</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>108</entity-height>
-		<entity-X-Coordinate>320</entity-X-Coordinate>
-		<entity-Y-Coordinate>219</entity-Y-Coordinate>
+		<entity-X-Coordinate>170</entity-X-Coordinate>
+		<entity-Y-Coordinate>649</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>website.demos.persistence.entities.News</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>286</entity-height>
+		<entity-X-Coordinate>403</entity-X-Coordinate>
+		<entity-Y-Coordinate>50</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

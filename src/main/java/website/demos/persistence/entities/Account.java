@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.*;
 
 import website.demos.persistence.entities.enums.EAccountType;
+import website.demos.persistence.entities.News;
+import java.util.Collection;
 
 @Entity
 @Table(name = "T_ACCOUNT")
@@ -41,6 +43,9 @@ public class Account implements Serializable {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "Type")
 	private EAccountType type;
+
+	@OneToMany(mappedBy = "account")
+	private Collection<News> news;
 
 	public long getId() {
 		return id;
@@ -88,6 +93,14 @@ public class Account implements Serializable {
 
 	public void setType(EAccountType param) {
 		this.type = param;
+	}
+
+	public Collection<News> getNews() {
+	    return news;
+	}
+
+	public void setNews(Collection<News> param) {
+	    this.news = param;
 	}
 
 }
