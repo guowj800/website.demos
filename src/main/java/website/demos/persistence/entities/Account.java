@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 import website.demos.persistence.entities.enums.EAccountType;
 import website.demos.persistence.entities.News;
+
 import java.util.Collection;
 
 @Entity
@@ -44,7 +45,7 @@ public class Account implements Serializable {
 	@Column(name = "Type")
 	private EAccountType type;
 
-	@OneToMany(mappedBy = "account")
+	@OneToMany(mappedBy = "account", cascade = { CascadeType.MERGE, CascadeType.REFRESH })
 	private Collection<News> news;
 
 	public long getId() {

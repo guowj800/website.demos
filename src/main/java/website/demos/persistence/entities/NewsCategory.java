@@ -1,8 +1,11 @@
 package website.demos.persistence.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import website.demos.persistence.entities.News;
+
 import java.util.Collection;
 
 @Entity
@@ -23,7 +26,7 @@ public class NewsCategory implements Serializable {
 	@Column(name = "Name")
 	private String name;
 
-	@OneToMany(mappedBy = "newsCategory")
+	@OneToMany(mappedBy = "newsCategory", cascade = { CascadeType.MERGE, CascadeType.REFRESH })
 	private Collection<News> news;
 
 	public long getId() {

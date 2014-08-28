@@ -22,10 +22,12 @@ public class News implements Serializable {
 	@Column(name = "Id")
 	private long id;
 	
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
+	@JoinColumn(name = "NewsCategoryId")
 	private NewsCategory newsCategory;
 	
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
+	@JoinColumn(name = "AccountId")
 	private Account account;
 	
 	@Basic
