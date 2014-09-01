@@ -15,9 +15,15 @@ public class PageController{
 
 	@RequestMapping("admin-login")
 	public String pageAdminLogin() {
-		logger.info("Page AdminLogin.htm");
+		logger.info("Page AdminLogin.html");
 		
 		return "AdminLogin";
+	}
+	@RequestMapping("admin-control-panel")
+	public String pageAdminControlPanel() {
+		logger.info("Page AdminControlPanel.html");
+		
+		return "AdminControlPanel";
 	}
 	
 	@RequestMapping("rest")

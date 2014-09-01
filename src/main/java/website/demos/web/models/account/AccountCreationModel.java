@@ -7,8 +7,6 @@ import website.demos.common.exceptions.CommonSystemException;
 import website.demos.common.global.InstanceConverter;
 import website.demos.persistence.entities.Account;
 
-
-
 public class AccountCreationModel extends Account {
 	private static final long serialVersionUID = 1L;
 

@@ -21,6 +21,20 @@ public class NewsCategoryService {
 		return newsCategoryRepository.getAllNewsCategory();
 	}
 	
+	public NewsCategory get(int id){
+		return newsCategoryRepository.get(id);
+	}
 	
+	public void save(NewsCategory newsCategory){
+		newsCategoryRepository.save(newsCategory);
+	}
+	
+	public void update(NewsCategory newsCategory){
+		newsCategoryRepository.update(newsCategory);
+	}
+	
+	public void delete(NewsCategory newsCategory){
+		newsCategoryRepository.delete(newsCategory);
+	}
 
 }
