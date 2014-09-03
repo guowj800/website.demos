@@ -20,5 +20,7 @@
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.generate_statistics">true</property>
   <mapping class="website.demos.persistence.entities.Account"/>
+  <mapping class="website.demos.persistence.entities.News"/>
+  <mapping class="website.demos.persistence.entities.NewsCategory"/>
  </session-factory>
 </hibernate-configuration>
