@@ -7,6 +7,7 @@ import javax.persistence.*;
 import website.demos.persistence.entities.News;
 
 import java.util.Collection;
+import java.util.LinkedList;
 
 @Entity
 @Table(name = "T_NEWSCATEGORY")
@@ -46,6 +47,8 @@ public class NewsCategory implements Serializable {
 	}
 
 	public Collection<News> getNews() {
+		if(news == null)
+			news = new LinkedList<News>();
 	    return news;
 	}
 

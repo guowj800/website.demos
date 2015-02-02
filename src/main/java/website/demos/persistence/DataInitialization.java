@@ -30,6 +30,7 @@ public class DataInitialization {
 	public void initialize() {
 		// clearData();
 		initialAccounts();
+		//System.out.println("aaaaa");
 	}
 	
 	public void initialAccounts() {
@@ -77,6 +78,6 @@ public class DataInitialization {
 		//Persist
 		accountRepository.save(jack, penny);
 		newsCategoryRepository.save(newsCategory_1, newsCategory_1);
-		newsRepository.save(news_1, news_1);
+		newsRepository.save(news_1, news_2);
 	}
 }

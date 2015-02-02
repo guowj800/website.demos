@@ -2,6 +2,7 @@ package website.demos.persistence.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedList;
 
 import javax.persistence.*;
 
@@ -97,6 +98,8 @@ public class Account implements Serializable {
 	}
 
 	public Collection<News> getNews() {
+		if(news == null)
+			news = new LinkedList<News>();
 	    return news;
 	}
 

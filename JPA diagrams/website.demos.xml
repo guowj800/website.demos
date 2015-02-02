@@ -11,22 +11,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>website.demos.persistence.entities.NewsCategory</entity-name>
+		<entity-name>website.demos.persistence.entities.Account</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>146</entity-height>
-		<entity-X-Coordinate>712</entity-X-Coordinate>
-		<entity-Y-Coordinate>120</entity-Y-Coordinate>
+		<entity-height>226</entity-height>
+		<entity-X-Coordinate>90</entity-X-Coordinate>
+		<entity-Y-Coordinate>80</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>website.demos.persistence.entities.Account</entity-name>
+		<entity-name>website.demos.persistence.entities.NewsCategory</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>226</entity-height>
-		<entity-X-Coordinate>90</entity-X-Coordinate>
-		<entity-Y-Coordinate>80</entity-Y-Coordinate>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>712</entity-X-Coordinate>
+		<entity-Y-Coordinate>120</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -44,22 +44,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>website.demos.persistence.entities.NavigationFirst</entity-name>
+		<entity-name>website.demos.persistence.entities.News</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>108</entity-height>
-		<entity-X-Coordinate>170</entity-X-Coordinate>
-		<entity-Y-Coordinate>649</entity-Y-Coordinate>
+		<entity-height>286</entity-height>
+		<entity-X-Coordinate>403</entity-X-Coordinate>
+		<entity-Y-Coordinate>50</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>website.demos.persistence.entities.News</entity-name>
+		<entity-name>website.demos.persistence.entities.NavigationFirst</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>286</entity-height>
-		<entity-X-Coordinate>403</entity-X-Coordinate>
-		<entity-Y-Coordinate>50</entity-Y-Coordinate>
+		<entity-height>108</entity-height>
+		<entity-X-Coordinate>170</entity-X-Coordinate>
+		<entity-Y-Coordinate>649</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
